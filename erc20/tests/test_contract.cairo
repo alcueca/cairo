@@ -65,7 +65,7 @@ fn test_mint() {
 
 #[test]
 fn test_transfer() {
-    let (contract_address, dispatcher) = deploy_contract();
+    let (_, dispatcher) = deploy_contract(); // REPLACE BY `contract_address` to fix
 
     let deployer = dispatcher.deployer();
     let recipient: ContractAddress = 1234.try_into().unwrap();
