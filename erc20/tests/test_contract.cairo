@@ -22,6 +22,8 @@ fn deploy_contract() -> (ContractAddress, IERC20Dispatcher) {
     parameters.append(NAME);
     parameters.append(SYMBOL);
     parameters.append(DECIMALS.try_into().unwrap());
+    // let parameters = array![NAME, SYMBOL, DECIMALS.try_into().unwrap()]; // Same, but in short with the `array!` macro.
+    
     let (contract_address, _) = contract.deploy(@parameters).unwrap();
     (contract_address, IERC20Dispatcher { contract_address })
 }
